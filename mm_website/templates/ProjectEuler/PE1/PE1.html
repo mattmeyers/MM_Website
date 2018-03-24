@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+{% block body %}
+<div class="col-12">
+  <p>
+  Find the sum of all the multiples of 3 or 5 below 1000.
+  </p>
+
+  <p>
+  The easiest way to solve this problem is a brute force approach.  By looping through all integers below 1000 and checking for divisibility by both 3 and 5, the sum can be determined.
+  </p>
+
+  <pre>
+    sum = 0
+    for x in range(1, 1000):
+      if (x % 3 == 0) or (x % 5 == 0):
+        sum += x
+    print(sum)
+  </pre>
+
+  <p>
+  While this solution is easy to understand and implement, it does not scale well.  Suppose we wanted to do the same problem, but rather than use 1000, we want to look below arbitrary n.  We need a more efficient algorithm for when n grows large.  To develop this algorithm, we can apply the inclusion-exclusion principle.  In this case, we consider the two sets A and B where A is the set of all integers less than 1000 that are divisible by 3, and B is the set of all integers less than 1000 and divisible by 5.  We want the cardinality of A union B, which is |A|+|B|-|A intersect B|.
+  </p>
+
+  <pre>
+    sumA = 0, sumB = 0, sumC = 0
+
+    cardA = 999 // 3, cardB = 999 // 5, cardC = 999 // 15
+
+    for x in range(0, cardA):
+        sumA += (3 + x*3)
+
+    for x in range(0, cardB):
+        sumB += (5 + x*5)
+
+    for x in range(0, cardC):
+        sumC += (15 + x*15)
+
+    print(sumA + sumB - sumC)
+  </pre>
+
+  <p>
+  Running either of these code snippets yields the answer of 233168.
+  </p>
+</div>
+{% endblock %}

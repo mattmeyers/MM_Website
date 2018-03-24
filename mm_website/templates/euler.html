@@ -1,0 +1,9 @@
+{% extends "layout.html" %}
+{% block body %}
+  <p>
+    Project Euler is a list of problems that require both knowledge of mathematics and programming to solve.  The difficulty of these problems ranges from easy to very difficult.  Most of the problems have more than one solution with the goal being to not only solve the problem, but to solve the problem efficiently.  Below is a list of my solutions with explanations of my thinking.</br></br>
+
+    For more information, visit <a href="https://www.projecteuler.net">projecteuler.net</a>.
+  </p>
+  <a href={{ url_for('eulerPE1', pe='PE1') }}>PE1</a>
+{% endblock %}
