@@ -9,6 +9,7 @@ name = "pypi"
 
 flask = "*"
 "e1839a8" = {path = ".", editable = true}
+pymongo = "*"
 
 
 [dev-packages]

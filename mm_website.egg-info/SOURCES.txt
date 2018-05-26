@@ -1,7 +1,0 @@
-mm_website/__init__.py
-mm_website/views.py
-mm_website.egg-info/PKG-INFO
-mm_website.egg-info/SOURCES.txt
-mm_website.egg-info/dependency_links.txt
-mm_website.egg-info/requires.txt
-mm_website.egg-info/top_level.txt

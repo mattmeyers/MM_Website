@@ -1,4 +1,24 @@
 {% extends "layout.html" %}
 {% block body %}
-  <p>THIS IS THE PROJECTS PAGE</p>
+  <div class="col-12">
+    <div class="row">
+      <div class="col-8">
+        <div class="row">
+          <h2>Research Project</h2>
+        </div>
+        <div class="row">
+          <p>I did a math.</p>
+        </div>
+      </div>
+      <div class="col-4">
+
+        <a href="{{url_for('static', filename='images/Poster.svg')}}" data-fancybox="gallery" data-caption="Caption for single image">
+	        <img style="width: 400px;" src="{{url_for('static', filename='images/Poster.svg')}}" alt="" />
+        </a>
+      </div>
+    </div>
+    <hr>
+  </div>
+  <script src="{{url_for('static', filename='scripts/jquery-3.3.1.min.js')}}"></script>
+  <script src="{{url_for('static', filename='scripts/jquery.fancybox.min.js')}}"></script>
 {% endblock %}
