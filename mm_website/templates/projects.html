@@ -2,23 +2,99 @@
 {% block body %}
   <div class="col-12">
     <div class="row">
+      <div class="col-12 text-center">
+          <h1>Ongoing Projects</h1>
+      </div>
+    </div>
+
+    <div class="row">
       <div class="col-8">
         <div class="row">
-          <h2>Research Project</h2>
+          <h2>mattmeyers.info</h2>
         </div>
         <div class="row">
-          <p>I did a math.</p>
+          <p>
+            <b>Description: </b>This is my personal website.  Here you can learn more about me and see what projects I have worked on.  The website is built using the Flask web framework.<br/>
+            <b>Languages: </b>Python, HTML, CSS<br/>
+            <b>Links: </b><a href="https://github.com/mattmeyers/MM_Website">Code</a>
+          </p>
         </div>
       </div>
       <div class="col-4">
+        <!-- TODO: Add pictures -->
+      </div>
+    </div>
+    <hr>
 
-        <a href="{{url_for('static', filename='images/Poster.svg')}}" data-fancybox="gallery" data-caption="Caption for single image">
-	        <img style="width: 400px;" src="{{url_for('static', filename='images/Poster.svg')}}" alt="" />
+    <div class="row">
+      <div class="col-8">
+        <div class="row">
+          <h2>Project Euler</h2>
+        </div>
+        <div class="row">
+          <p>
+            <b>Description: </b>Project Euler is a list of problems that require both knowledge of mathematics and programming to solve.  The difficulty of these problems ranges from easy to very difficult.  Most of the problems have more than one solution with the goal being to not only solve the problem, but to solve the problem efficiently.<br/><br/>
+
+            For more information, visit <a href="https://www.projecteuler.net">projecteuler.net</a>.<br/>
+            <b>Languages: </b>Python<br/>
+            <b>Links: </b><a href="https://github.com/mattmeyers/Project_Euler">My Solutions</a>
+          </p>
+        </div>
+      </div>
+      <div class="col-4">
+        <!-- TODO: Add pictures -->
+      </div>
+    </div>
+    <hr>
+
+    <div class="row">
+      <div class="col-12 text-center">
+          <h1>Completed Projects</h1>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-8">
+        <div class="row">
+          <h2>Summer 2017 Research Project</h2>
+        </div>
+        <div class="row">
+          <p>
+            <b>Title: </b>Numerical Solutions to Ordinary and Delay Differential Equation in Chebfun<br/>
+            <b>Advisor: </b>Dr. Tobin Driscoll<br/>
+            <b>Description: </b>The Chebfun system, written in MATLAB, can currently solve most ordinary differential equations efficiently; however, it cannot solve delay differential equations.  By reformulating ordinary and delay differential equations into integral equations, fixed point methods can be used to solve both types of problems.  One such method is the Picard iteration.  Because of the Picard iteration's often slow and unreliable convergence, the Anderson acceleration algorithm can be used to increase the rate of convergence.  In either case, the solution interval must be recursively shortened to assure convergence.  The Newton iteration can also be used to solve these problems and provides a solution in fewer, albeit slower, iterations.  The resulting solutions from both iterative methods compare favorably to existing methods built into Chebfun and MATLAB, especially for solutions with singular points.<br/>
+            <b>Languages: </b>MATLAB
+          </p>
+        </div>
+      </div>
+      <div class="col-4">
+        <a href="{{url_for('static', filename='Images/RP2017.svg')}}" data-fancybox="gallery_RP2017" data-caption="Summer 2017 Research Poster">
+	        <img style="width: 400px;" src="{{url_for('static', filename='Images/RP2017.svg')}}" alt="" />
+        </a>
+      </div>
+    </div>
+    <hr>
+
+    <div class="row">
+      <div class="col-8">
+        <div class="row">
+          <h2>Summer 2016 Research Project</h2>
+        </div>
+        <div class="row">
+          <p>
+            <b>Title: </b>Dimension Reduction and Clustering of Blood Pressure Waveforms<br/>
+            <b>Advisor: </b>Dr. Tobin Driscoll<br/>
+            <b>Description: </b>Hypoplastic Left Heart Syndrome (HLHS) is a congenital heart defect in which a baby is born with an underdeveloped left ventricle.  This condition has a 25% mortality rate in the first year of life.  By analyzing blood pressure waveforms, patterns can be extracted that could help monitor the disease more effectively.  A singular value decomposition (also called principal components analysis) finds important patterns within the data.  These patterns, contained in the left singular vectors, can be linearly combined to reproduce the data.  Because the singular vectors are ordered by significance, the linear combinations can be truncated, which effectively reduces each heart beat to three dimensions. The coefficients can then be plotted in three-dimensional space, and methods such as k-means clustering can be used to further analyze the waveforms.  The same analysis can also be performed on artificially generated data to better understand how various parameters in the circulatory system affect arterial blood pressure.<br/>
+            <b>Languages: </b>MATLAB
+          </p>
+        </div>
+      </div>
+      <div class="col-4">
+        <a href="{{url_for('static', filename='Images/RP2016.png')}}" data-fancybox="gallery_RP2016" data-caption="Summer 2016 Research Poster">
+	        <img style="width: 400px;" src="{{url_for('static', filename='Images/RP2016.png')}}" alt="" />
         </a>
       </div>
     </div>
     <hr>
   </div>
-  <script src="{{url_for('static', filename='scripts/jquery-3.3.1.min.js')}}"></script>
-  <script src="{{url_for('static', filename='scripts/jquery.fancybox.min.js')}}"></script>
 {% endblock %}
