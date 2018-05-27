@@ -1,4 +1,21 @@
 {% extends "layout.html" %}
 {% block body %}
-  <p>THIS IS THE ABOUT PAGE</p>
+  <div class="col-12">
+    <div class="row">
+      <div class="col-4 offset-4 text-center">
+          <p>
+            Hey, I'm Matt and this is my personal website.  This site is still under development, but you can can check out my resume and some projects I have worked on.  Feel free to check out my GitHub for some examples of code that I have written.
+          </p>
+      </div>
+    </div>
+
+    <div class="row">
+      <div class="col-2 offset-3">
+        <a href="{{ url_for('resume') }}"><img class="NavButton" src="{{url_for('static', filename='Images/Resume.png')}}" /></a>
+      </div>
+      <div class="col-2 offset-2">
+        <a href="{{ url_for('projects') }}"><img class="NavButton" src="{{url_for('static', filename='Images/Projects.png')}}" /></a>
+      </div>
+    </div>
+  </div>
 {% endblock %}
