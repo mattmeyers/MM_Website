@@ -1,9 +1,12 @@
 {% extends "layout.html" %}
+{% block navigation %}
+{% include "navigation.html" %}
+{% endblock %}
 {% block body %}
-  <div class="col-12">
+  <div class="col-12" id="resume">
     <div class="row">
       <div class="col-3">
-        <b>Education</b>
+        <h4>Education</h4>
       </div>
       <div class="col-9">
         <ul>
@@ -26,7 +29,7 @@
     <hr>
     <div class="row">
       <div class="col-3">
-        <b>Work Experience</b>
+        <h4>Work Experience</h4>
       </div>
       <div class="col-9">
         <ul>
@@ -89,7 +92,7 @@
     <hr>
     <div class="row">
       <div class="col-3">
-        <b>Skills</b>
+        <h4>Skills</h4>
       </div>
       <div class="col-9">
         <ul>
@@ -108,7 +111,7 @@
     <hr>
     <div class="row">
       <div class="col-3">
-        <b>Honors and Awards</b>
+        <h4>Honors and Awards</h4>
       </div>
       <div class="col-9">
         <ul>

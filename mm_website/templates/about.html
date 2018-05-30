@@ -1,20 +1,19 @@
 {% extends "layout.html" %}
 {% block body %}
   <div class="col-12">
-    <div class="row">
-      <div class="col-4 offset-4 text-center">
+    <div class="row" id="About-Block">
+      <div class="col-6 offset-3 text-center" >
           <p>
-            Hey, I'm Matt and this is my personal website.  This site is still under development, but you can can check out my resume and some projects I have worked on.  Feel free to check out my GitHub for some examples of code that I have written.
+            Hey, I'm Matt and this is my personal website.  I graduated from the University of Delaware where I studied applied mathematics, computer science, and physics.  I was involved in two summer research projects based around data analysis and numerical methods using MATLAB.  Lately I've been working at MCG Strategic where I have been learning about web development.  Check my projects page for more info.  Also, feel free to check out my GitHub for some examples of code that I have written.
           </p>
       </div>
     </div>
-
     <div class="row">
-      <div class="col-2 offset-3">
-        <a href="{{ url_for('resume') }}"><img class="NavButton" src="{{url_for('static', filename='Images/Resume.png')}}" /></a>
-      </div>
-      <div class="col-2 offset-2">
-        <a href="{{ url_for('projects') }}"><img class="NavButton" src="{{url_for('static', filename='Images/Projects.png')}}" /></a>
+      <div class="col-6 offset-3">
+        <div class="row justify-content-between About-Buttons">
+          <a href="{{url_for('resume')}}" style="font-family: 'Ubuntu Condensed', sans-serif;">Resume</a>
+          <a href="{{url_for('projects')}}" style="font-family: 'Ubuntu Condensed', sans-serif;">Projects</a>
+        </div>
       </div>
     </div>
   </div>

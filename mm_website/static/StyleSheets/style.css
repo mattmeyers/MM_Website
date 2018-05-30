@@ -1,4 +1,42 @@
-.NavButton:hover{
-    transform: scale(1.5);
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+body {
+  min-height: 100vh;
+  position: relative;
+  margin: 0;
+}
+
+#About-Block{
+  margin: 5em 0em;
+}
+
+.About-Buttons a{
+  border-style: solid;
+  border-color: black;
+  border-width: 2px;
+  width: 180px;
+  padding: 1px 30px 6px 30px;
+  margin-bottom: 15px;
+  font-size: 2em;
+  color: black;
+  text-decoration: none !important;
+  text-align: center;
+}
+
+.About-Buttons a:visited {color: black;}
+.About-Buttons a:hover {color: black;}
+.About-Buttons a:active {color: black;}
+
+#resume ul{
+  list-style-type: none;
+}
+
+#footer {
+  position: absolute;
+  bottom: 0;
+  height: 50px;
+  margin-top: 2em;
+  text-align: center;
+}
+
+.Social-Link{
+  width: 1.5em;
 }
