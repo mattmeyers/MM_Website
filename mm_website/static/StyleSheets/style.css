@@ -4,8 +4,26 @@ body {
   margin: 0;
 }
 
+.Large-Font{
+  /*font-family: 'Ubuntu Condensed', sans-serif;
+  font-family: 'Roboto Mono', monospace;*/
+}
+
+.header{
+  padding-top: 10px;
+}
+
+.header a{
+  color: black;
+  text-decoration: none !important;
+}
+
+.header .nav{
+  font-size: 1.5em;
+}
+
 #About-Block{
-  margin: 5em 0em;
+  margin: 2.5em 0em;
 }
 
 .About-Buttons a{
@@ -21,12 +39,20 @@ body {
   text-align: center;
 }
 
-.About-Buttons a:visited {color: black;}
-.About-Buttons a:hover {color: black;}
-.About-Buttons a:active {color: black;}
+.About-Buttons a:visited, .header a:visited {color: black;}
+.About-Buttons a:hover, .header a:hover {color: black;}
+.About-Buttons a:active, .header a:active {color: black;}
 
 #resume ul{
   list-style-type: none;
+}
+
+li li{
+  list-style-type: circle;
+}
+
+.resume-category{
+  border-right: 1px solid rgba(0,0,0,.1);
 }
 
 #footer {

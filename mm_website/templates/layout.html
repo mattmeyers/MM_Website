@@ -18,9 +18,11 @@
   <body>
     <div class="container">
       {% if request.path == '/' %}
-      <div class="row justify-content-center" style="padding-top: 10px;">
-        <h1 style="font-family: 'Ubuntu Condensed', sans-serif;">Matt Meyers</h1>
+      <div class="row justify-content-center Large-Font" style="padding-top: 10px;">
+        <h1>Matt Meyers</h1>
       </div>
+      {% else %}
+      {% include 'header.html' %}
       {% endif %}
       <hr style="margin: 10px -100px 20px;"/>
       <div class="row justify-content-center">
