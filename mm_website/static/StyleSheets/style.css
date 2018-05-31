@@ -48,7 +48,11 @@ body {
 }
 
 li li{
-  list-style-type: circle;
+  list-style-type: disc;
+}
+
+#resume .listItems li{
+  list-style-type: disc;
 }
 
 .resume-category{
@@ -65,4 +69,18 @@ li li{
 
 .Social-Link{
   width: 1.5em;
+  padding-bottom: 5px;
+  padding-top: 20px;
+}
+
+#projects h1{
+  margin: 20px auto;
+}
+
+.Below-Images{
+  margin-top: 10px;
+}
+
+.Below-Images img{
+  height: 100px;
 }

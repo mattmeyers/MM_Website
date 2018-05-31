@@ -3,7 +3,7 @@
 {% include "navigation.html" %}
 {% endblock %}
 {% block body %}
-  <div class="col-12">
+  <div class="col-12" id="projects">
     <div class="row">
       <div class="col-12 text-center">
           <h1>Ongoing Projects</h1>
@@ -20,6 +20,25 @@
             <b>Description: </b>This is my personal website.  Here, you can learn more about me and see what projects I have worked on.  The website is built using the Flask web framework.<br/>
             <b>Languages: </b>Python, HTML, CSS<br/>
             <b>Links: </b><a href="https://github.com/mattmeyers/MM_Website" target="_blank">Code</a>
+          </p>
+        </div>
+      </div>
+      <div class="col-4">
+        <!-- TODO: Add pictures -->
+      </div>
+    </div>
+    <hr>
+
+    <div class="row">
+      <div class="col-8">
+        <div class="row">
+          <h2>Cloud File Management System</h2>
+        </div>
+        <div class="row">
+          <p>
+            <b>Where: </b>MCG Strategic<br/>
+            <b>Description: </b>This web application automates the creation and management of a cloud based file repository.  The Nextcloud software is used for the front-end file interaction and Google Cloud Storage handles the file storage.  Runcloud is used to provision a web application to tie everything together.  API calls are made to these services to perform an installation and user meta-data is stored in a Google Firebase Realtime Database (NoSQL).<br/>
+            <b>Languages: </b>NodeJS, React
           </p>
         </div>
       </div>
@@ -59,12 +78,62 @@
     <div class="row">
       <div class="col-8">
         <div class="row">
+          <h2>MCG Timesheets Mobile App</h2>
+        </div>
+        <div class="row">
+          <p>
+            <b>Where: </b>MCG Strategic<br/>
+            <b>Description: </b>This is an Android mobile app used for internal company use at MCG Strategic.  The app is populated by consuming an internally created REST API.  APIs calls are then made to generate an Excel spreadsheet based on input paramters from the app.  The new spreadsheet can then be opened from the app.  In addition to creating timesheets, the app allows internal job numbers to be edited as well as provide notifications for newly generated timesheets.<br/>
+            <b>Languages: </b>Flutter mobile framework (Dart)
+          </p>
+        </div>
+      </div>
+      <div class="col-4">
+        <div class="row justify-content-center">
+          <a href="{{url_for('static', filename='Images/TimesheetsMobile1.png')}}" data-fancybox="gallery_MTA" data-caption="App navigation drawer">
+            <img style="height: 400px;" src="{{url_for('static', filename='Images/TimesheetsMobile1.png')}}" alt="" />
+          </a>
+        </div>
+        <div class="row Below-Images justify-content-around">
+          <a href="{{url_for('static', filename='Images/TimesheetsMobile2.png')}}" data-fancybox="gallery_MTA" data-caption="Client summary page"><img src="{{url_for('static', filename='Images/TimesheetsMobile2.png')}}" alt="" /></a>
+          <a href="{{url_for('static', filename='Images/TimesheetsMobile3.png')}}" data-fancybox="gallery_MTA" data-caption="Timesheet generation page"><img src="{{url_for('static', filename='Images/TimesheetsMobile3.png')}}" alt="" /></a>
+          <a href="{{url_for('static', filename='Images/TimesheetsMobile4.png')}}" data-fancybox="gallery_MTA" data-caption="Reconciled timesheet generation page"><img src="{{url_for('static', filename='Images/TimesheetsMobile4.png')}}" alt="" /></a>
+          <a href="{{url_for('static', filename='Images/TimesheetsMobile5.png')}}" data-fancybox="gallery_MTA" data-caption="Job number editor"><img src="{{url_for('static', filename='Images/TimesheetsMobile5.png')}}" alt="" /></a>
+        </div>
+
+      </div>
+    </div>
+    <hr>
+
+    <div class="row">
+      <div class="col-8">
+        <div class="row">
+          <h2>MCG Uptime Monitor</h2>
+        </div>
+        <div class="row">
+          <p>
+            <b>Where: </b>MCG Strategic<br/>
+            <b>Description: </b>This web application serves to check for website uptime by using a python script to retrieve HTTP status codes.  Upon receiving a code other than 200, the script sends a slack notification.  Data is stored in the Concrete5 Express Database Abstraction (DBAL).  The application also provides an in depth summary page for each tracked website.<br/>
+            <b>Languages: </b>Python, Concrete5 (PHP), Javascript, HTML, CSS
+          </p>
+        </div>
+      </div>
+      <div class="col-4">
+        <!-- TODO: Add pictures -->
+      </div>
+    </div>
+    <hr>
+
+    <div class="row">
+      <div class="col-8">
+        <div class="row">
           <h2>Summer 2017 Research Project</h2>
         </div>
         <div class="row">
           <p>
-            <b>Title: </b>Numerical Solutions to Ordinary and Delay Differential Equation in Chebfun<br/>
-            <b>Advisor: </b>Dr. Tobin Driscoll<br/>
+            <b>Where: </b>University of Delaware<br/>
+            <b>Project Title: </b>Numerical Solutions to Ordinary and Delay Differential Equation in Chebfun<br/>
+            <b>Project Advisor: </b>Dr. Tobin Driscoll<br/>
             <b>Description: </b>The Chebfun system, written in MATLAB, can currently solve most ordinary differential equations efficiently; however, it cannot solve delay differential equations.  By reformulating ordinary and delay differential equations into integral equations, fixed point methods can be used to solve both types of problems.  One such method is the Picard iteration.  Because of the Picard iteration's often slow and unreliable convergence, the Anderson acceleration algorithm can be used to increase the rate of convergence.  In either case, the solution interval must be recursively shortened to assure convergence.  The Newton iteration can also be used to solve these problems and provides a solution in fewer, albeit slower, iterations.  The resulting solutions from both iterative methods compare favorably to existing methods built into Chebfun and MATLAB, especially for solutions with singular points.<br/>
             <b>Languages: </b>MATLAB
           </p>
@@ -85,8 +154,9 @@
         </div>
         <div class="row">
           <p>
-            <b>Title: </b>Dimension Reduction and Clustering of Blood Pressure Waveforms<br/>
-            <b>Advisor: </b>Dr. Tobin Driscoll<br/>
+            <b>Where: </b>University of Delaware<br/>
+            <b>Project Title: </b>Dimension Reduction and Clustering of Blood Pressure Waveforms<br/>
+            <b>Project Advisor: </b>Dr. Tobin Driscoll<br/>
             <b>Description: </b>Hypoplastic Left Heart Syndrome (HLHS) is a congenital heart defect in which a baby is born with an underdeveloped left ventricle.  This condition has a 25% mortality rate in the first year of life.  By analyzing blood pressure waveforms, patterns can be extracted that could help monitor the disease more effectively.  A singular value decomposition (also called principal components analysis) finds important patterns within the data.  These patterns, contained in the left singular vectors, can be linearly combined to reproduce the data.  Because the singular vectors are ordered by significance, the linear combinations can be truncated, which effectively reduces each heart beat to three dimensions. The coefficients can then be plotted in three-dimensional space, and methods such as k-means clustering can be used to further analyze the waveforms.  The same analysis can also be performed on artificially generated data to better understand how various parameters in the circulatory system affect arterial blood pressure.<br/>
             <b>Languages: </b>MATLAB
           </p>
