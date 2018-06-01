@@ -77,10 +77,18 @@ li li{
   margin: 20px auto;
 }
 
+#projects img{
+  border: 1px solid black;
+}
+
 .Below-Images{
   margin-top: 10px;
 }
 
 .Below-Images img{
+  height: 75px;
+}
+
+.Below-Images-Mobile img{
   height: 100px;
 }
