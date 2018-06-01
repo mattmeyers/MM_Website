@@ -2,6 +2,21 @@
   <div class="col-6">
     <a href="/" ><h1>Matt Meyers</h1></a>
   </div>
-  <div class="col-2 offset-2 align-self-center nav"><a href="{{ url_for('resume') }}">Resume</a></div>
-  <div class="col-2 align-self-center nav"><a href="{{ url_for('projects') }}">Projects</a></div>
+  <div class="col-2 offset-2 align-self-center nav">
+    <a href="{{ url_for('resume') }}" id="Nav-Resume">Resume</a>
+  </div>
+  <div class="col-2 align-self-center nav">
+    <a href="{{ url_for('projects') }}" id="Nav-Projects">Projects</a>
+  </div>
 </div>
+
+<script type="text/javascript">
+$(document).ready(function() {
+  {% if request.path == "/resume" %}
+    $("#Nav-Resume").css("border-bottom", "2px solid black");
+  {% elif request.path == "/projects" %}
+    $("#Nav-Projects").css("border-bottom", "2px solid black");
+  {% endif %}
+});
+
+</script>
