@@ -1,4 +1,19 @@
-from flask import Flask
-app = Flask(__name__)
+import os
+from flask import Flask, render_template
 
-import mm_website.views
+def create_app(test_config=None):
+    app = Flask(__name__)
+
+    @app.route('/')
+    def about():
+        return render_template('about.html')
+
+    @app.route('/resume')
+    def resume():
+        return render_template('resume.html')
+
+    @app.route('/projects')
+    def projects():
+        return render_template('projects.html')
+
+    return app
