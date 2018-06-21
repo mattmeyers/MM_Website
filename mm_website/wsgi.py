@@ -8,4 +8,5 @@ logging.basicConfig(stream=sys.stderr)
 fsu = FileSystemUtils()
 sys.path.insert(0, fsu.get_path_to_script(__file__))
 
-from mm_website import app as application
+from __init__ import create_app
+application = create_app()
