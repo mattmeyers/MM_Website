@@ -1,23 +1,89 @@
 {% extends "layout.html" %}
-{% block navigation %}
-{% include "navigation.html" %}
-{% endblock %}
 {% block body %}
-<div class="row" id="contact">
-  <div class="col-12">
-    <div class="row">
-      <input type="text">
+<div class="col-12" id="contact">
+  <div class="row justify-content-center">
+    <h2>Questions or comments?  Send me a message.</h2>
+  </div></br>
+  <form action="{{ url_for('email') }}" method="post" id="contact-form">
+    <div class="row justify-content-center">
+      <div class="col-8 form-group">
+        <input type="text" class="form-control" placeholder="Your Name" id="name">
+        <div class="invalid-feedback">What's your name?</div>
+      </div>
     </div>
-    <div class="row">
-      <input type="text">
+    <div class="row justify-content-center">
+      <div class="col-8 form-group">
+        <input type="email" class="form-control" placeholder="Your Email" id="email">
+        <div class="invalid-feedback">Invalid email</div>
+      </div>
     </div>
-    <div class="row">
-      <input type="text">
+    <div class="row justify-content-center">
+      <div class="col-8 form-group">
+        <input type="email" class="form-control" placeholder="Confirm Email" id="cemail">
+        <div class="invalid-feedback">Emails must match</div>
+      </div>
     </div>
-    <div class="row">
-      <input type="text">
+    <div class="row justify-content-center">
+      <div class="col-8 form-group">
+        <textarea class="form-control" rows="5" id="message" placeholder="Your Message"></textarea>
+        <div class="invalid-feedback">Forget a message?</div>
+      </div>
     </div>
-  </div>
+    <div class="row justify-content-center">
+      <input type="submit" class="Contact-Buttons" value="Submit">
+      <button type="button" class="Contact-Buttons" id="clear">Clear</button>
+    </div>
+  </form>
 </div>
 
+<script type="text/javascript">
+  $("#email").focusout(function() {
+    if ($("#email").is(":invalid")) {
+      $("#email").addClass("is-invalid");
+    } else {
+      $("#email").removeClass("is-invalid");
+    }
+  });
+
+  $("#cemail").focusout(function() {
+    if ($("#email").val() !== $("#cemail").val()) {
+      $("#cemail").addClass("is-invalid");
+    } else {
+      $("#cemail").removeClass("is-invalid");
+    }
+  });
+
+  $("#contact-form").submit(function(e) {
+    if ($("#name").val() === "") {
+      e.preventDefault();
+      $("#name").addClass("is-invalid");
+    }
+
+    if ($("#email").val() === "") {
+      e.preventDefault();
+      $("#email").addClass("is-invalid");
+    }
+
+    if ($("#email").val() !== $("#cemail").val()) {
+      e.preventDefault();
+      $("#cemail").addClass("is-invalid");
+    }
+
+    if ($("#message").val() === "") {
+      e.preventDefault();
+      $("#message").addClass("is-invalid");
+    }
+  });
+
+  $("#clear").click(function() {
+    $("#name").val("");
+    $("#name").removeClass("is-invalid");
+    $("#email").val("");
+    $("#email").removeClass("is-invalid");
+    $("#cemail").val("");
+    $("#cemail").removeClass("is-invalid");
+    $("#message").val("");
+    $("#message").removeClass("is-invalid");
+  });
+</script>
 {% endblock %}

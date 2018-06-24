@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template
+from flask import Flask, render_template, redirect, url_for
 from flask_mail import Mail, Message
 
 def create_app(test_config=None):
@@ -16,16 +16,17 @@ def create_app(test_config=None):
 
     mail = Mail(app)
 
-    @app.route('/email')
+    @app.route('/email', methods=["POST"])
     def email():
-        msg = Message(
-            'THIS IS A TEST',
-            sender=os.getenv('MAIL_USER'),
-            recipients=['mmeyers.07.95@gmail.com']
-        )
-        msg.body = "THIS IS A TEST MESSAGE BODY"
-        mail.send(msg)
-        return "Sent"
+        # msg = Message(
+        #     'THIS IS A TEST',
+        #     sender=os.getenv('MAIL_USER'),
+        #     recipients=['mmeyers.07.95@gmail.com']
+        # )
+        # msg.body = "THIS IS A TEST MESSAGE BODY"
+        # mail.send(msg)
+        print("SENDING MESSAGE")
+        return redirect(url_for('contact'))
 
     @app.route('/')
     def about():
