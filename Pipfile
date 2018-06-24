@@ -6,8 +6,7 @@ name = "pypi"
 [packages]
 flask = "*"
 "e1839a8" = {path = ".", editable = true}
-pymongo = "*"
-mcgpyutils = "*"
 flask-mail = "*"
+python-dotenv = "*"
 
 [dev-packages]

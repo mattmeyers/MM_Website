@@ -1,12 +1,15 @@
 import sys
 import logging
-from mcgpyutils import FileSystemUtils
+from dotenv import load_dotenv
+from pathlib import path
+
+env_path = Path('.')/'../.env'
+load_dotenv(dotenv_path=env_path)
 
 logging.basicConfig(stream=sys.stderr)
 
 # Add the current directory to the python path.
-fsu = FileSystemUtils()
-sys.path.insert(0, fsu.get_path_to_script(__file__))
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 from mm_website import create_app
 application = create_app()
